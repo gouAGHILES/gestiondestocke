@@ -1,6 +1,7 @@
 package com.webdiamond.gestiondestock.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Data
+@Builder
 @MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,8 +28,10 @@ public class Utilisateur extends AbstractEntity{
 	private String motDePasse;
 	
 	private String photo;
-	
-	private boolean actived;
+
+	@ManyToOne
+	@JoinColumn(name = "identreprise")
+	private Entreprise entreprise;
 	
 	@OneToMany(mappedBy = "utilisateur")
 	List<Roles> roles;

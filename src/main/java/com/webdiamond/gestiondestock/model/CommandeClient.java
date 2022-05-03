@@ -1,9 +1,6 @@
 package com.webdiamond.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -14,6 +11,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

@@ -1,17 +1,16 @@
 package com.webdiamond.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.*;
 
 @Data
+@Builder
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,9 +18,14 @@ import javax.persistence.*;
 @Table(name = "mvtstk")
 public class MvtStk extends AbstractEntity{
 
-	
+	private Instant dateMvt;
+
+	private BigDecimal quantite;
+
 	@ManyToOne
 	@JoinColumn(name = "idArticle")
 	private Article article;
+
+	private TypeMvtStk  typeMvt;
 
 }

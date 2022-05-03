@@ -1,16 +1,15 @@
 package com.webdiamond.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -25,5 +24,9 @@ public class LigneCommandeClient extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = "idcommandeclient")
     private CommandeClient commandeClient;
+
+    private BigDecimal quantite;
+
+    private BigDecimal prixUtilaire;
 
 }

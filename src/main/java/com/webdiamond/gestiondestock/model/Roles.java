@@ -1,12 +1,14 @@
 package com.webdiamond.gestiondestock.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@Builder
 @MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,12 +16,9 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Roles extends AbstractEntity{
 
-	@Id
-	@GeneratedValue
-	private Long idRole;
 	private String roleName;
 	@ManyToOne
-	@JoinColumn(name = "idUtilisateur")
+	@JoinColumn(name = "idutilisateur")
 	private Utilisateur utilisateur;
 
 }

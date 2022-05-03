@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.Instant;
 
 @Data
 @MappedSuperclass
@@ -23,11 +24,11 @@ public class AbstractEntity implements Serializable {
     @CreatedDate
     @Column(name = "creationDate",nullable = false)
     @JsonIgnore
-    private Data creationData;
+    private Instant creationData;
 
     @LastModifiedDate
     @Column(name = "lastModifiedDate")
     @JsonIgnore
-    private Data lastUpdateDate;
+    private Instant lastUpdateDate;
 
 }

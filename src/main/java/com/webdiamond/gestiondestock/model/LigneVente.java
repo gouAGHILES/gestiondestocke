@@ -1,14 +1,12 @@
 package com.webdiamond.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
+@Builder
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,5 +19,7 @@ public class LigneVente extends AbstractEntity{
 	private Ventes vente;
 
 	private BigDecimal quantite;
+
+	private BigDecimal prixUnitaire;
 	
 }
