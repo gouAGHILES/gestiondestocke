@@ -1,16 +1,10 @@
 package com.webdiamond.gestiondestock.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.webdiamond.gestiondestock.model.CommandeClient;
 import com.webdiamond.gestiondestock.model.CommandeFournisseur;
-import com.webdiamond.gestiondestock.model.Fournisseur;
-import com.webdiamond.gestiondestock.model.LigneCommandeFournisseur;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.time.Instant;
 import java.util.List;
 @Data
@@ -27,7 +21,7 @@ public class CommandeFournisseurDto {
     private FournisseurDto fournisseur;
 
     @JsonIgnore
-    private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
+    private List<LigneVenteDto> ligneCommandeFournisseurs;
 
     public CommandeFournisseurDto fromEntity(CommandeFournisseur commandeFournisseur){
         if(commandeFournisseur == null){

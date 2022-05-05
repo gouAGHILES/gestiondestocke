@@ -10,7 +10,6 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Data
-@Builder
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor

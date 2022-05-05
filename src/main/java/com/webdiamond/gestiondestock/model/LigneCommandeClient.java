@@ -27,6 +27,6 @@ public class LigneCommandeClient extends AbstractEntity{
 
     private BigDecimal quantite;
 
-    private BigDecimal prixUtilaire;
+    private BigDecimal prixUnitaire;
 
 }

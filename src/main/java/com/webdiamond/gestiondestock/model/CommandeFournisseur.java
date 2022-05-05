@@ -2,9 +2,7 @@ package com.webdiamond.gestiondestock.model;
 
 import lombok.*;
 
-import java.io.Serializable;
 import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
@@ -27,6 +25,6 @@ public class CommandeFournisseur extends AbstractEntity{
 	private Fournisseur fournisseur;
 	
 	@OneToMany(mappedBy = "commandeFournisseur")
-	private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+	private List<LigneVente> ligneCommandeFournisseurs;
 	
 }
