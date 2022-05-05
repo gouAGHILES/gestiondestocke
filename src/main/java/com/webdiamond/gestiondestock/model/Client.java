@@ -26,7 +26,7 @@ public class Client extends AbstractEntity{
 	
 	private String photo;
 	
-	private String mail;
+	private String email;
 
 	private String numTel;
 	

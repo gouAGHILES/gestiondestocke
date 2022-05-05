@@ -25,7 +25,7 @@ public class Fournisseur extends AbstractEntity{
 	
 	private String photo;
 	
-	private String mail;
+	private String email;
 
 	private String numTel;
 	

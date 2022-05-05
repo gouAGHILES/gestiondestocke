@@ -13,7 +13,7 @@ import javax.persistence.Embedded;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class Adresse {
+public class Adresse extends AbstractEntity {
 
     private String adresse1;
 
