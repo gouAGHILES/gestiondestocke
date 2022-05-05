@@ -1,5 +1,8 @@
 package com.webdiamond.gestiondestock.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.webdiamond.gestiondestock.model.CommandeClient;
+import com.webdiamond.gestiondestock.model.CommandeFournisseur;
 import com.webdiamond.gestiondestock.model.Fournisseur;
 import com.webdiamond.gestiondestock.model.LigneCommandeFournisseur;
 import lombok.Builder;
@@ -20,7 +23,34 @@ public class CommandeFournisseurDto {
 
     private Instant dateCommande;
 
-    private Fournisseur fournisseur;
+    @JsonIgnore
+    private FournisseurDto fournisseur;
 
+    @JsonIgnore
     private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
+
+    public CommandeFournisseurDto fromEntity(CommandeFournisseur commandeFournisseur){
+        if(commandeFournisseur == null){
+            return null;
+        }
+
+        return CommandeFournisseurDto.builder()
+                .id(commandeFournisseur.getId())
+                .code(commandeFournisseur.getCode())
+                .dateCommande(commandeFournisseur.getDateCommande())
+                .build();
+    }
+
+    public CommandeFournisseur toEntity(CommandeFournisseurDto dto){
+        if(dto == null){
+            return null;
+        }
+
+        CommandeFournisseur commandeFournisseur = new CommandeFournisseur();
+        commandeFournisseur.setId(dto.getId());
+        commandeFournisseur.setCode(dto.getCode());
+        commandeFournisseur.setDateCommande(dto.getDateCommande());
+
+        return commandeFournisseur;
+    }
 }

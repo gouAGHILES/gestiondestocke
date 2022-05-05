@@ -23,7 +23,7 @@ public class Utilisateur extends AbstractEntity{
 	
 	private String prenom;
 	
-	private String mail;
+	private String email;
 	
 	private String motDePasse;
 	
