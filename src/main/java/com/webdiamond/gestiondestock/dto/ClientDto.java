@@ -22,7 +22,7 @@ public class ClientDto {
     private String prenom;
 
     @JsonIgnore
-    private AdresseDto adresse;
+    private AdresseDto adresseDto;
 
     private String photo;
 

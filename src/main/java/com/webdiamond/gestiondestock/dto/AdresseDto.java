@@ -8,7 +8,6 @@ import lombok.Data;
 @Builder
 public class AdresseDto {
 
-    private Integer id;
 
     private String adresse1;
 
@@ -26,7 +25,6 @@ public class AdresseDto {
         }
 
         return AdresseDto.builder()
-                .id(adresse.getId())
                 .adresse1(adresse.getAdresse1())
                 .adresse2(adresse.getAdresse2())
                 .ville(adresse.getVille())
@@ -41,7 +39,7 @@ public class AdresseDto {
         }
 
         Adresse adresse = new Adresse();
-        adresse.setId(dto.getId());
+
         adresse.setAdresse1(dto.getAdresse1());
         adresse.setAdresse2(dto.getAdresse2());
         adresse.setVille(dto.getVille());

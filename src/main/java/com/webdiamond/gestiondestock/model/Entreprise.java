@@ -2,14 +2,12 @@ package com.webdiamond.gestiondestock.model;
 
 import lombok.*;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Builder
+@MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -34,4 +32,5 @@ public class Entreprise extends  AbstractEntity{
 
     @OneToMany(mappedBy = "entreprise")
     private List<Utilisateur> utilisateurs;
+
 }

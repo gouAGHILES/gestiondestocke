@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -17,8 +18,10 @@ import javax.persistence.*;
 public class Roles extends AbstractEntity{
 
 	private String roleName;
-	@ManyToOne
-	@JoinColumn(name = "idutilisateur")
-	private Utilisateur utilisateur;
+
+	private Integer idEntreprise;
+
+	@OneToMany(mappedBy = "roles")
+	private List<Utilisateur> utilisateur;
 
 }

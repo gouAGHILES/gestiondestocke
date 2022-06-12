@@ -19,8 +19,10 @@ import javax.persistence.*;
 public class Ventes extends AbstractEntity{
 	
 	private String code;
-	
-	@OneToMany(mappedBy = "vente")
+
+	private Integer idEntreprise;
+
+	@OneToMany(mappedBy = "ventes")
 	private List<LigneVente> ligneVentes;
 	
 }

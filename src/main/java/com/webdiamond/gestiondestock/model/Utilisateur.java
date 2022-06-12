@@ -24,6 +24,10 @@ public class Utilisateur extends AbstractEntity{
 	private String prenom;
 	
 	private String email;
+
+
+	@Embedded
+	private Adresse adresse;
 	
 	private String motDePasse;
 	
@@ -32,9 +36,10 @@ public class Utilisateur extends AbstractEntity{
 	@ManyToOne
 	@JoinColumn(name = "identreprise")
 	private Entreprise entreprise;
-	
-	@OneToMany(mappedBy = "utilisateur")
-	List<Roles> roles;
+
+	@ManyToOne
+	@JoinColumn(name = "idroles")
+	private Roles roles;
 
 
 }

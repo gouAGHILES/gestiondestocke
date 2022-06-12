@@ -1,6 +1,7 @@
 package com.webdiamond.gestiondestock.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.webdiamond.gestiondestock.model.Adresse;
 import com.webdiamond.gestiondestock.model.Utilisateur;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +18,8 @@ public class UtilisateurDto {
     private String nom;
 
     private String prenom;
+
+    private AdresseDto adresseDto;
 
     private String email;
 

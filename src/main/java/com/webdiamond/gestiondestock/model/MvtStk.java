@@ -27,4 +27,6 @@ public class MvtStk extends AbstractEntity{
 
 	private TypeMvtStk  typeMvt;
 
+	private Integer idEntreprise;
+
 }

@@ -21,6 +21,8 @@ public class Article extends AbstractEntity{
 	private String designation;
 	
 	private BigDecimal prixUnitaireHT;
+
+	private Integer idEntreprise;
 	
 	private BigDecimal tauxTva;
 	

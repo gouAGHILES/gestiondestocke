@@ -23,6 +23,8 @@ public class CommandeClient extends AbstractEntity{
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateCommande;
+
+	private Integer idEntreprise;
 	
 	@ManyToOne
 	@JoinColumn(name = "idclient")
